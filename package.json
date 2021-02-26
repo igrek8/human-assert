@@ -1,6 +1,6 @@
 {
   "name": "human-assert",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Human friendly context assertions",
   "runkitExampleFilename": "docs/index.js",
   "keywords": [

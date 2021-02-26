@@ -1,9 +1,20 @@
 const { compile, resolve } = require('human-assert');
 
-const $ = (source, ctx) => console.log(resolve(compile({ source }), ctx).toString().padEnd(5) + ' -> ' + source);
+const $ = (source, ctx) => resolve(compile({ source }), ctx);
 
-$('admin in roles', { roles: ['admin'] });
+$('admin in roles', {
+  roles: ['admin'],
+});
 
-$('not (suspended in groups) or (admin in roles)', { groups: ['suspended'], roles: ['customer'] });
+$('not (suspended in groups) or (admin in roles)', {
+  groups: ['suspended'],
+  roles: ['customer'],
+});
 
-$('(read:* write:comments) in permissions', { permissions: ['read:posts', 'write:comments'] });
+$('(read:posts write:comments) in permissions', {
+  permissions: ['read:posts', 'write:comments'],
+});
+
+$('moderator:* in roles', {
+  roles: ['moderator:1'],
+});
